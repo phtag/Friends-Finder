@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Chirpy!</title>
+  <title>Survey</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -21,14 +21,23 @@
 
 <body>
   <div class="jumbotron">
-    <h1 class="text-center">Friends Finder</h1>
+    <h1 class="text-center">Survey Questions</h1>
   </div>
   <div class="container">
       <div class="row">
-          <a href="/survey" class="btn btn-danger btn-lg">
-            <span class="fa fa-plus"></span>Answer survey questions</a>
+        <h3 style="margin-bottom: 30px" >Answer the following 10 questions on a scale from 1 to 5 where 5 is strongly agree and 1 is strongly disagree</h2>
+          <label style="font-size:20px; color:blue; margin-right: 15px" for="question-1">Do you consider yourself to be a romantic person?</label>
+          <input type="number" name="question-1" value=1 required min=1 max=5 />
       </div>
-  </div>
-  <script src="js/home.js" type="text/javascript"></script>
-  </body>
+      <a href="/" style="margin-top: 50px" class="btn btn-danger btn-lg">
+        <span class="fa fa-plus"></span>View matching friends</a>
+</div>
+  <script>
+    $("#submit-survey").on("click", function(event) {
+        event.preventDefault();
+        var data = {};
+        $.post("api/friends", function(data) {
+      });
+    });
+  </script></body>
 </html>

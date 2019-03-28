@@ -4,24 +4,18 @@ var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Static directory
-app.use(express.static("app/public"));
+app.use(express.static("/app/public"));
 // Routes
 // =============================================================
-require("./app/routing/apiRouting.js")(app);
-// Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/home.html"));
-  });
-  
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/survey.html"));
-  });
+require("./app/routing/htmlRoutes.js")(app);
+require("./app/routing/apiRoutes.js")(app);
+
 
 // Starts the server to begin listening
 // =============================================================
