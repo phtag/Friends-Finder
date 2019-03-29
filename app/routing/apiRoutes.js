@@ -14,11 +14,10 @@ var mySurveyResults = [];
 function getSum(total, num) {
   return total + num;
 }
-
 // Routes
 // =============================================================
 module.exports = function(app) {
-    app.get("/api/friends", function(req, res) {
+    app.get("/api/friends", function(req, results) {
   
       // Finding a list of all possible friends
         res.json(results);
