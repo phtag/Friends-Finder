@@ -29,7 +29,10 @@ module.exports = function(app) {
       console.log("Submit survey:");
       var currentSurvey = new SurveyResults(req.body.name, req.body.photo);
       currentSurvey.addScores(req.body.scores);
+
+      // Add current user to the array of user objects
       mySurveyResults.push(currentSurvey);
+
       // console.log(mySurveyResults);
       // Calculate differences between current user and all other users
       var currentUserScores = [];
@@ -46,7 +49,7 @@ module.exports = function(app) {
       for (i=0;i<mySurveyResults.length-1;i++) {
         var delta = [];
         for (j=0;j<mySurveyResults[i].scores.length;j++) {
-          delta.push(currentUserScores[j] - Math.abs(Number(mySurveyResults[i].scores[j])));
+          delta.push(Math.abs(currentUserScores[j] - Number(mySurveyResults[i].scores[j])));
         }
         console.log("Delta="+delta);
         // Sum up the differences
@@ -54,8 +57,9 @@ module.exports = function(app) {
         console.log("difference="+difference);
 
         if (difference < matchedUser.minDifference) {
-          // Save the index of the matched user
+          // Save the index and difference of the matched user up to this point
           matchedUser.matchedIndex = i;
+          matchedUser.minDifference = difference;
         }
       }
       // Let's send back the match
