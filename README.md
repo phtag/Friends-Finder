@@ -18,7 +18,7 @@ NOTE: This project is referenced on my portfolio page at [my portfolio](https://
 The purpose of this assignment is to learn how to create a node.js server application using Express that services different routes from a client. In particular, the server services both GET and POST requests from clients as well as providing different routes for sending web pages to the client.
 
 ### Getting Started
-To use the Friend Finder application, go to the Heruko link: 
+To use the Friend Finder application, go to the Heruko link: https://sleepy-temple-45120.herokuapp.com/
 
 ### Home Page of Friend-Finder
 ![Home page Screenshot](/images/Friends-Finder-HomePage-screenShot.jpg)
