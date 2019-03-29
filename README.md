@@ -12,6 +12,12 @@ The api serves routes for:
 * getting a JSON formatted list of all possible friends on the site
 * posting information about the current user
 
+### Home Page of Friend-Finder
+![Home page Screenshot](/images/Friends-Finder-HomePage-screenShot.jpg)
+
+### Survey Page of Friend-Finder
+![Survey Screenshot](/images/Friends-Finder-Survey-screenShot.jpg)
+
 NOTE: This project is referenced on my portfolio page at [my portfolio](https://phtag.github.io/Updated-portfolio/)
 
 ### Purpose
@@ -20,10 +26,8 @@ The purpose of this assignment is to learn how to create a node.js server applic
 ### Getting Started
 To use the Friend Finder application, go to the Heruko link: https://sleepy-temple-45120.herokuapp.com/
 
-### Home Page of Friend-Finder
-![Home page Screenshot](/images/Friends-Finder-HomePage-screenShot.jpg)
+From the home page, click on the "Go to survey" button. This takes you to the survey page. Enter your name and a link to a photo of yourself and answer all of the 10 survey questions. When finished, click the "submit" button and the Friends-Finder application will display the name and a photo of the closest matching friend.
 
-### Survey Page of Friend-Finder
-![Survey Screenshot](/images/Friends-Finder-Survey-screenShot.jpg)
+You can also click on the link in the footer of the page to view a list of all friends on the site and how they answered their survey questions.
 
 This project is maintained by Peter Tag
