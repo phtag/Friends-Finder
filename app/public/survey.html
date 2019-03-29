@@ -161,8 +161,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
-        </div>
-  
+        </div>  
       </div>
     </div>
   
@@ -185,59 +184,39 @@
       return inputsValid;
     }
 
-      // // Chosen CSS
-      // var config = {
-      //   ".survey-selections": {},
-      //   ".survey-selections-deselect": {
-      //     allow_single_deselect: true
-      //   },
-      //   ".survey-selections-no-single": {
-      //     disable_search_threshold: 10
-      //   },
-      //   ".survey-selections-no-results": {
-      //     no_results_text: "Oops, nothing found!"
-      //   },
-      //   ".survey-selections-width": {
-      //     width: "95%"
-      //   }
-      // };
-  
-      // for (var selector in config) {
-      //   $(selector).chosen(config[selector]);
-      // }
-  
-      // Respond to survey submission
-      $("#submit-survey").on("click", function(event) {
+    // Respond to survey submission
+    $("#submit-survey").on("click", function(event) {
 
-        event.preventDefault();
-   
-        // If all required fields are filled
-        if (validateUserInputs()) {
-          // Create an object for the user"s data
-          var userInputData = {
-            name: $("#name").val(),
-            photo: $("#photo").val(),
-            scores: []
-          };
-          for (i=1;i<=10;i++){
-            $("#question-"+i).each(function(index, object) { 
-              userInputData.scores.push($(object).val());
-            });
-          }
-          // AJAX post the data to the friends API.
-          $.post("/api/friends", userInputData, function(response) { 
-            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#matching-name").text(response.name);
-            $("#matching-image").attr("src", response.photo);
+      event.preventDefault();
   
-            // Show the modal with the best match
-            $("#results-modal").modal("toggle");
-  
+      // If all required fields are filled
+      if (validateUserInputs()) {
+        // Create an object for the user"s data
+        var userInputData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: []
+        };
+        for (i=1;i<=10;i++){
+          $("#question-"+i).each(function(index, object) { 
+            userInputData.scores.push($(object).val());
           });
-        } else {
-          alert("You must fill in all required information and answer all survey questions before submitting!");
         }
-      });
+        // AJAX post the data to the friends API.
+        $.post("/api/friends", userInputData, function(response) { 
+          console.log(response);
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#matched-name").text(response.name);
+          $("#matched-image").attr("src", response.photo);
+
+          // Show the modal with the best match
+          $("#results-modal").modal("toggle");
+
+        });
+      } else {
+        alert("You must fill in all required information and answer all survey questions before submitting!");
+      }
+    });
     </script>
   </body>
   </html>
