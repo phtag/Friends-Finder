@@ -12,15 +12,22 @@ The api serves routes for:
 * getting a JSON formatted list of all possible friends on the site
 * posting information about the current user
 
+### Home Page of Friend-Finder
+![Home page Screenshot](/images/Friends-Finder-HomePage-screenShot.jpg)
+
+### Survey Page of Friend-Finder
+![Survey Screenshot](/images/Friends-Finder-Survey-screenShot.jpg)
+
 NOTE: This project is referenced on my portfolio page at [my portfolio](https://phtag.github.io/Updated-portfolio/)
 
 ### Purpose
 The purpose of this assignment is to learn how to create a node.js server application using Express that services different routes from a client. In particular, the server services both GET and POST requests from clients as well as providing different routes for sending web pages to the client.
 
 ### Getting Started
-To use the Friend Finder application, you will need to copy the package.json file for this project to your root node.js directory and install NPM packages for:
+To use the Friend Finder application, go to the Heruko link: https://sleepy-temple-45120.herokuapp.com/
 
-![Home page Screenshot](/images/Friends-Finder-HomePage-screenShot.jpg)
-![Survey Screenshot](/images/Friends-Finder-Survey-screenShot.jpg)
+From the home page, click on the "Go to survey" button. This takes you to the survey page. Enter your name and a link to a photo of yourself and answer all of the 10 survey questions. When finished, click the "submit" button and the Friends-Finder application will display the name and a photo of the closest matching friend.
+
+You can also click on the link in the footer of the page to view a list of all friends on the site and how they answered their survey questions.
 
 This project is maintained by Peter Tag
